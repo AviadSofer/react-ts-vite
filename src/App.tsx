@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import './App.css'
-import React from 'react'
+import { NumberProvider } from './NumberContext';
+import { StyledApp } from './components/styles/App,styled';
+import GlobalStyles from './components/styles/Global';
+import Container from './components/Container';
+import MessageView from './components/MessageView';
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      react and TS
-    </div>
+    <NumberProvider>
+        <StyledApp>
+          <GlobalStyles/>
+          <Container/>
+          <MessageView/>
+        </StyledApp>
+    </NumberProvider>
   )
 }
 
-export default App
+export default App;
